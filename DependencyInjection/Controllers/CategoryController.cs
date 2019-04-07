@@ -21,7 +21,9 @@ namespace DependencyInjection.Controllers
 
         public ActionResult Add()
         {
+           
             _categoryManager.Add(new Category());
+            ViewBag.Success = "Add Category Successful";
             return View();
         }
     }

@@ -18,9 +18,10 @@ namespace DependencyInjection.Controllers
         {
             _productManager = productManager;
         }
-        public ActionResult Index()
+        public ActionResult Add()
         {
             _productManager.Add(new Product());
+            ViewBag.Success = "Add Product Successful";
             return View();
         }
     }

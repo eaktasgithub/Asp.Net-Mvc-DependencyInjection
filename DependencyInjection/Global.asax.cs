@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyInjection.Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,11 @@ namespace DependencyInjection
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            /*
+             * Burada oluştumuş olduğumuz Controller ControllerBuilder'ın SetControllerFactory metodu ile set edip ayağa kaldırıyoruz
+             */
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+           
         }
     }
 }
